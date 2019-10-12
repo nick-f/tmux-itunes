@@ -1,6 +1,8 @@
 # Tmux iTunes
 
-Tmux plugin that display current track name from iTunes on your status bar.
+Tmux plugin that display current track name on your status bar.
+
+Both iTunes and macOS Catalina's Music app are supported.
 
 ### Screenshot
 
@@ -20,7 +22,7 @@ Here's the example in `.tmux.conf`:
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
-    set -g @plugin 'aar0nTw/tmux-itunes'
+    set -g @plugin 'nick-f/tmux-itunes'
 
 Hit `prefix + I` to fetch the plugin and source it.
 

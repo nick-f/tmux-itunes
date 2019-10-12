@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 CURRENT_TRACK_STR=$(osascript <<EOF
-  tell application "iTunes"
-    if player state is stopped
+  tell application "Music"
+    if player state is stopped then
       return ""
     else
       if player state is paused then
