@@ -4,12 +4,13 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 product_version=$(sw_vers -productVersion)
 os_vers=( ${product_version//./ } )
+os_vers_major="${os_vers[0]}"
 os_vers_minor="${os_vers[1]}"
 
-if [[ ${os_vers_minor} -ge 15 ]]; then
-  current_track="#($CURRENT_DIR/scripts/current_track_music_app.sh)"
-else
+if [[ ${os_vers_major} -le 10 && ${os_vers_minor} -lt 15 ]]; then
   current_track="#($CURRENT_DIR/scripts/current_track_itunes_app.sh)"
+else
+  current_track="#($CURRENT_DIR/scripts/current_track_music_app.sh)"
 fi
 
 current_track_interpolation="\#{current_track}"
